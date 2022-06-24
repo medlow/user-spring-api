@@ -1,7 +1,4 @@
-FROM maven:3.8.2-jdk-8
-
-WORKDIR /code
-COPY . .
-RUN mvn clean install
-
-CMD mvn spring-boot:run
+FROM openjdk:8
+ADD target/users-mysql.jar users-mysql.jar
+EXPOSE 8086
+ENTRYPOINT ["java", "-jar", "users-mysql.jar"]
