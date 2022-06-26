@@ -1,6 +1,6 @@
-FROM maven:3.8.2-jdk-8
+FROM maven:latest
 
-WORKDIR /code
+WORKDIR /app
 COPY . .
 RUN mvn clean install
 
